@@ -18,15 +18,15 @@ import google.generativeai as genai
 genai.configure(api_key=os.getenv("GEMINI_API"))
 
 # Load the cattle registration data from a CSV file
-df_cattle = pd.read_csv('D:/Cattle Identification/sample_registration.csv')
+df_cattle = pd.read_csv('sample_registration.csv')
 
 # Load the class labels from a JSON file
-label_json_path = 'D:/Cattle Identification/class_labels_vgg.json'  
+label_json_path = 'class_labels_vgg.json'  
 with open(label_json_path, 'r') as json_file:
     labels = json.load(json_file)
 
 # Load the pre-trained VGG model
-model = load_model('D:/Cattle Identification/vgg_model.h5')
+model = load_model('vgg_model.h5')
 
 # Initialize the FastAPI application
 app = FastAPI()
